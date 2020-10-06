@@ -13,12 +13,23 @@ ul {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	display: flex;
-	flex-flow: row wrap;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
 }
-li {
-	flex: auto;
-}
+
 img { 
   width: 100%; 
+}
+
+@media (min-width: 650px) {
+	ul {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 1000px) {
+	ul {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }
