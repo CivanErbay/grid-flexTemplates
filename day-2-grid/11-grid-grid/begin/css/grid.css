@@ -23,6 +23,7 @@ a {
 	margin: 0 auto;
 	float: none;
 	background-color: #fff;
+	display: grid;
 }
 /* hack to make images flexible in our prototype */
 div img {
@@ -39,12 +40,15 @@ div img {
 	flex: 0 0 92%;
 	margin: 0 4%;
 }
-.col-1-2,
-.col-1-4 {
+.c1r1,
+.c2r1,
+.c3r1,
+.c4r1
+ {
 	background-color: #ffc;
 }
-.col-2,
-.col-2-4 {
+.c1r2,
+.c2r2 {
 	background-color: #ccf;
 }
 .col-3 {
@@ -61,54 +65,49 @@ div img {
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
-	[class*='col-']{
-		margin-left: 4%;
-		margin-right: 0%;
+	.c1r1 {
+		grid-row: 1/2;
+		grid-column: 1/2;
 	}
-	.col-1-2,
-	.col-2 {
-		flex: 0 0 44%; 
+	.c2r1 {
+		grid-row: 1/2;
+		grid-column: 2/3;
 	}
-	.col-1-4,
-	.col-3,
-	.col-4,
-	.col-2-4 {
-		flex: 0 0 92%;
+	.c3r1 {
+		grid-row: 2/3;
+		grid-column: 1/2;
 	}
-	.reverse [class*='col-'] {
-		margin-left: 0%;
-		margin-right: 4%;
+	.c4r1 {
+		grid-row: 2/3;
+		grid-column: 2/3;
 	}
-
 
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-	.col-1-2,
-	.col-1-4 {
-		flex: 0 0 20%;
+	.c1r1 {
+		grid-row: 1/2;
+		grid-column: 1/2;
 	}
-	.col-2,
-	.col-2-4 {
-		flex: 0 0 44%;
+	.c2r1 {
+		grid-row: 1/2;
+		grid-column: 2/3;
 	}
-	.col-3 {
-		flex: 0 0 68%;
+	.c3r1 {
+		grid-row: 1/2;
+		grid-column: 3/4
 	}
-	.col-4 {
-		flex: 0 0 92%;
+	.c4r1 {
+		grid-row: 1/2;
+		grid-column: 4/5;
 	}
-	.order-first {
-		order: 1;
-	}	
-	.order-second {
-		order: 2;
+	.c1r2 {
+		grid-row: 2/3;
+		grid-column: 1/3;
 	}
-	.order-third {
-		order: 3;
-	}
-	.order-fourth {
-		order: 4;
+	.c2r2 {
+		grid-row: 2/3;
+		grid-column: 3/5;
 	}
 }
 
